@@ -1,0 +1,14 @@
+@media (max-width: 920px) and (min-width: 350px) {
+.head 
+{
+display: none;
+}
+.main {
+padding-bottom: 15px;
+padding-left: 20px;
+}
+.otdeli
+{
+justify-content: center;
+}
+}
