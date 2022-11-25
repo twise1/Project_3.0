@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+
+.osnova {
+display: flex;
+font-family: Roboto;
+flex-direction: column;
+align-items: center;
+}
+
+.head {
+display: flex;
+flex-direction: row;
+width: 65vw;
+color: #959BA4;
+justify-content: space-between;
+font-weight: bold;
+}
+
+
+.header {
+display: flex;
+flex-direction: row;
+width: 100%;
+font-size: 15px;
+background-color: #F5F5F6;
+margin-bottom: 53px;
+justify-content: space-around;
+align-items: center; 
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+.enter:hover{
+    background-color: #833AE0;
+    color: white;
+}
+
+.mobile{
+display: none;
+position: absolute;
+width: 25vw;
+flex-direction: column;
+font-size: 15px;
+background-color: #833AE0;
+color: #FFFFFF;
+padding: 12px;
+top: 48px;
+right: 1;
+font-weight: bold;
+}
+
+button {
+width: 5vw;
+height: 30px;
+font-family: Roboto;
+font-weight: bold;
+background-color: #FFFFFF;
+min-width: 60px;
+border-radius: 5px;
+}
+
+button:hover {
+cursor: pointer;
+}
+
+.main {
+margin: auto;
+}
+
+h1 {
+font-size: 55px;
+}
+
+.otdeli {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+width: 65vw;
+min-width: 250px;
+justify-content: space-between;
+align-items: center;
+}
+.mainh {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+width: 70vw;
+justify-content: space-between;
+align-items: center;
+}
+td {
+min-width: 60px;
+width: 5vw;
+border-right:  1px solid #E5E5E5;
+padding-top: 5px;
+padding-bottom: 5px;
+text-align: center;
+}
+td:hover {
+cursor: pointer;
+}
