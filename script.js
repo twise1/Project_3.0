@@ -42,10 +42,10 @@ fetch(`https://api.exchangerate.host/latest?base=${lboxval}&symbols=${rboxval}`)
 let val="";
 switch(rbox)
 {
-case 0:{val=parseFloat(data.rates.UAH*event.target.value.replaceAll(' ',''));break;}
-case 1:{val=parseFloat(data.rates.USD*event.target.value.replaceAll(' ',''));break;}
-case 2:{val=parseFloat(data.rates.AZN*event.target.value.replaceAll(' ',''));break;}
-case 3:{val=parseFloat(data.rates.GBP*event.target.value.replaceAll(' ',''));break;}
+case 0:{val=parseFloat(data.rates.UAH*event.target.value.replaceAll(' ',''));;break;}
+case 1:{val=parseFloat(data.rates.USD*event.target.value.replaceAll(' ',''));;break;}
+case 2:{val=parseFloat(data.rates.AZN*event.target.value.replaceAll(' ',''));;break;}
+case 3:{val=parseFloat(data.rates.GBP*event.target.value.replaceAll(' ',''));;break;}
 }
 let input0=document.querySelectorAll('input')[0].value;
 let input1=document.querySelectorAll('input')[1].value; 
@@ -93,10 +93,10 @@ fetch(`https://api.exchangerate.host/latest?base=${rboxval}&symbols=${lboxval}`)
 let val="";
 switch(lbox)
 {
-case 0:{val=parseFloat(data.rates.UAH*event.target.value.replaceAll(' ',''));break;}
-case 1:{val=parseFloat(data.rates.USD*event.target.value.replaceAll(' ',''));break;}
-case 2:{val=parseFloat(data.rates.AZN*event.target.value.replaceAll(' ',''));break;}
-case 3:{val=parseFloat(data.rates.GBP*event.target.value.replaceAll(' ',''));break;}
+case 0:{val=parseFloat(data.rates.UAH*event.target.value.replaceAll(' ',''));;break;}
+case 1:{val=parseFloat(data.rates.USD*event.target.value.replaceAll(' ',''));;break;}
+case 2:{val=parseFloat(data.rates.AZN*event.target.value.replaceAll(' ',''));;break;}
+case 3:{val=parseFloat(data.rates.GBP*event.target.value.replaceAll(' ',''));;break;}
 }
 let input0=document.querySelectorAll('input')[0].value;
 let input1=document.querySelectorAll('input')[1].value; 
@@ -116,7 +116,7 @@ input0=input0.split('.')[0]+"."+input0.split('.')[1].replaceAll(" ","");
 })});
 
 
-inputs.forEach((item) =>{item.addEventListener('keydown',(event) => {
+input.forEach((item) =>{item.addEventListener('keydown',(event) => {
 if(event.target.value ==="0")
 {           
 event.target.value="";
@@ -159,17 +159,17 @@ let val="";
 let valofa="";
 switch(lbox)
 {
-case 0:{val=parseFloat(data.rates.UAH*input[1].value.replaceAll(' ',''));valueP=data.rates.UAH;break;}
-case 1:{val=parseFloat(data.rates.USD*input[1].value.replaceAll(' ',''));valueP=data.rates.USD;break;}
-case 2:{val=parseFloat(data.rates.AZN*input[1].value.replaceAll(' ',''));valueP=data.rates.AZN;break;}
-case 3:{val=parseFloat(data.rates.GBP*input[1].value.replaceAll(' ',''));valueP=data.rates.GBP;break;}
+case 0:{val=parseFloat(data.rates.UAH*input[1].value.replaceAll(' ',''));valofa=data.rates.UAH;break;}
+case 1:{val=parseFloat(data.rates.USD*input[1].value.replaceAll(' ',''));valofa=data.rates.USD;break;}
+case 2:{val=parseFloat(data.rates.AZN*input[1].value.replaceAll(' ',''));valofa=data.rates.AZN;break;}
+case 3:{val=parseFloat(data.rates.GBP*input[1].value.replaceAll(' ',''));valofa=data.rates.GBP;break;}
 }
 let a1=document.querySelectorAll(".a");
 let a2="";   
-fetch(`https://api.exchangerate.host/latest?base=${rightValue}&symbols=${leftValue}`)
+fetch(`https://api.exchangerate.host/latest?base=${rboxval}&symbols=${lboxval}`)
 .then((response) =>  response.json())
 .then((data) =>{       
-switch(left)
+switch(lbox)
 {
 case 0:{a2=parseFloat(data.rates.UAH);break;}
 case 1:{a2=parseFloat(data.rates.USD);break;}
@@ -243,14 +243,14 @@ let val="";
 let valofa="";
 switch(rbox)
 {
-case 0:{val=parseFloat(data.rates.UAH*inputs[0].value.replaceAll(' ',''));valueP=data.rates.UAH;break;}
-case 1:{val=parseFloat(data.rates.USD*inputs[0].value.replaceAll(' ',''));valueP=data.rates.USD;break;}
-case 2:{val=parseFloat(data.rates.AZN*inputs[0].value.replaceAll(' ',''));valueP=data.rates.AZN;break;}
-case 3:{val=parseFloat(data.rates.GBP*inputs[0].value.replaceAll(' ',''));valueP=data.rates.GBP;break;}
+case 0:{val=parseFloat(data.rates.UAH*input[0].value.replaceAll(' ',''));valofa=data.rates.UAH;break;}
+case 1:{val=parseFloat(data.rates.USD*input[0].value.replaceAll(' ',''));valofa=data.rates.USD;break;}
+case 2:{val=parseFloat(data.rates.AZN*input[0].value.replaceAll(' ',''));valofa=data.rates.AZN;break;}
+case 3:{val=parseFloat(data.rates.GBP*input[0].value.replaceAll(' ',''));valofa=data.rates.GBP;break;}
 }
 let a1=document.querySelectorAll(".a");
 let a2="";  
-fetch(`https://api.exchangerate.host/latest?base=${leftValue}&symbols=${rightValue}`)
+fetch(`https://api.exchangerate.host/latest?base=${lboxval}&symbols=${rboxval}`)
 .then((response) =>  response.json())
 .then((data) =>{                     
 switch(rbox)
@@ -268,7 +268,7 @@ a2=parseFloat(String(a2));
 }
 a1[0].textContent="1 " + lboxval + " = " + a2 + " " + rboxval;
 })
-if(valueP.toString().split(".").length > 1)
+if(valofa.toString().split(".").length > 1)
 {
 if(String(valofa).split(".")[1].length > 4)
 valofa=String(valofa).split(".")[0]+'.'+String(valofa).split(".")[1].substring(0,4);
