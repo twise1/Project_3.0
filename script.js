@@ -47,22 +47,23 @@ case 1:{val=parseFloat(data.rates.USD*event.target.value.replaceAll(' ',''));;br
 case 2:{val=parseFloat(data.rates.AZN*event.target.value.replaceAll(' ',''));;break;}
 case 3:{val=parseFloat(data.rates.GBP*event.target.value.replaceAll(' ',''));;break;}
 }
-let input0=document.querySelectorAll('input')[0].value;
-let input1=document.querySelectorAll('input')[1].value; 
+let input0=document.querySelectorAll('input')[0];
+let input1=document.querySelectorAll('input')[1]; 
 if(String(val).split('.').length>1)
 {
 if(String(val).split('.')[1].length>4)
 val=String(val).split('.')[0]+'.'+String(val).split('.')[1].substring(0,4);
 val=parseFloat(String(val));
 }
-document.querySelectorAll('input')[1].value=value;
+
+document.querySelectorAll('input')[1].value=val;
 $(document.querySelectorAll('input')[1]).val($(document.querySelectorAll('input')[1]).val().replace(/\,/g,'.'));
 $(document.querySelectorAll('input')[1]).val($(document.querySelectorAll('input')[1]).val().replace(/(?=(\d+\.\d{4})).+|(\.(?=\.))|([^\.\d])|(^\D)/gi,'$1'));
 $(document.querySelectorAll('input')[1]).val($(document.querySelectorAll('input')[1]).val().replace(/(\d)(?=(\d{3})+(?!\d))/g,'$1'));
-if(input1.split('.').length>1)
-input1=input1.split('.')[0]+"."+input1.split('.')[1].replaceAll(" ","");
+if(input1.value.split('.').length>1)
+input1.value=input1.value.split('.')[0]+"."+input1.value.split('.')[1].replaceAll(" ","");
 if(input0.split('.').length>1)
-input0=input0.split('.')[0]+"."+input0.split('.')[1].replaceAll(" ","");
+input0.value=input0.value.split('.')[0]+"."+input0.value.split('.')[1].replaceAll(" ","");
 })});
 
 
@@ -98,21 +99,22 @@ case 1:{val=parseFloat(data.rates.USD*event.target.value.replaceAll(' ',''));;br
 case 2:{val=parseFloat(data.rates.AZN*event.target.value.replaceAll(' ',''));;break;}
 case 3:{val=parseFloat(data.rates.GBP*event.target.value.replaceAll(' ',''));;break;}
 }
-let input0=document.querySelectorAll('input')[0].value;
-let input1=document.querySelectorAll('input')[1].value; 
+let input0=document.querySelectorAll('input')[0];
+let input1=document.querySelectorAll('input')[1]; 
 if(String(val).split('.').length>1)
 { 
 if(String(val).split('.')[1].length>4)
 val=String(val).split('.')[0]+'.'+String(val).split('.')[1].substring(0,4);
 val=parseFloat(String(val));
 }
+document.querySelectorAll('input')[0].value=val
 $(document.querySelectorAll('input')[0]).val($(document.querySelectorAll('input')[0]).val().replace(/\,/g,'.'));
 $(document.querySelectorAll('input')[0]).val($(document.querySelectorAll('input')[0]).val().replace(/(?=(\d+\.\d{4})).+|(\.(?=\.))|([^\.\d])|(^\D)/gi,'$1'));
 $(document.querySelectorAll('input')[0]).val($(document.querySelectorAll('input')[0]).val().replace(/(\d)(?=(\d{3})+(?!\d))/g,'$1 '));
-if(input1.split('.').length>1)
-input1=input1.split('.')[0]+"."+input1.split('.')[1].replaceAll(" ","");
-if(input0.split('.').length>1)
-input0=input0.split('.')[0]+"."+input0.split('.')[1].replaceAll(" ","");
+if(input1.value.split('.').length>1)
+input1.value=input1.value.split('.')[0]+"."+input1.value.split('.')[1].replaceAll(" ","");
+if(input0.value.split('.').length>1)
+input0.value=input0.value.split('.')[0]+"."+input0.value.split('.')[1].replaceAll(" ","");
 })});
 
 
